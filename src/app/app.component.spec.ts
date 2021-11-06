@@ -1,35 +1,27 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatToolbar } from '@angular/material/toolbar';
 import { AppComponent } from './app.component';
+import { MockComponent, ngMocks } from 'ng-mocks'
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
+        MockComponent(MatToolbar),
         AppComponent
       ],
     }).compileComponents();
-  });
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'ngx-me'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngx-me');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
+  });
+
+  it(`should have as title '/ME'`, () => {
+    expect(ngMocks.find(MatToolbar).nativeElement.innerHTML).toContain('/ME');
+  });
+
+  it('should render header with name', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ngx-me app is running!');
+    expect(compiled.querySelector('main H1')?.textContent).toContain('Damien Marest');
   });
 });
