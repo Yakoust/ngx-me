@@ -1,0 +1,36 @@
+@mixin scrollspy-nav($theme) {
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+
+  ul.scrollspy-nav {
+    padding: 0;
+    li {
+
+      border-left: 2px solid mat-color($accent);
+      border-radius: 2px;
+      box-shadow: inset 1px 0 0 mat-color($accent);
+      font-size: 14px;
+      font-weight: 500;
+      list-style: none;
+      padding: 4px 0 4px 16px;
+
+      > a,
+      > a:active,
+      > a:focus,
+      > a:hover {
+        text-decoration: none;
+      }
+
+      &:not(.active) {
+        border-color: transparent;
+
+        box-shadow: inset 1px 0 0 mat-color($foreground, text, 0.21);
+        opacity: 0.6;
+
+        a:not(:hover) {
+          color: mat-color($foreground, text);
+        }
+      }
+    }
+  }
+}

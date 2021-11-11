@@ -1,0 +1,50 @@
+@import '~@angular/material/theming';
+@import 'utils';
+// variables
+
+$viewport-max-width: 1024px;
+$viewport-offset-x: 64px;
+$toolbar-desktop-height: rem(96px);
+
+// mixins
+
+@mixin viewport-width($padding: true) {
+  margin: 0 auto;
+  max-width: $viewport-max-width;
+
+  @if ($padding) {
+    padding-left: $viewport-offset-x;
+    padding-right: $viewport-offset-x;
+  }
+}
+
+:host {
+  display: block;
+}
+mat-toolbar {
+  padding: 0 30px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  h1 {
+    cursor: pointer;
+  }
+  fret-search-bar {
+    max-width: 500px;
+    width: inherit;
+  }
+}
+main {
+  min-height: calc(100vh - #{$toolbar-desktop-height});
+  padding-top: $viewport-offset-x;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.outlet-wrapper {
+  @include viewport-width();
+  margin-bottom: $viewport-offset-x;
+  margin-top: $viewport-offset-x;
+  position: relative;
+}

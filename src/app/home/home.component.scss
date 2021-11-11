@@ -1,0 +1,39 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .links {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 50px;
+    mat-card {
+      height: auto;
+      margin: 20px;
+      width: 350px;
+      mat-card-title {
+        align-items: center;
+        display: flex;
+        a {
+          font-size: small;
+        }
+      }
+      mat-card-content {
+        a,
+        a:visited {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

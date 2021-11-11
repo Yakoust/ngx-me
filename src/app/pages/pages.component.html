@@ -1,0 +1,7 @@
+<h1>{{ route$ | async }} : {{ param$ | async }}</h1>
+<ng-container *ngFor="let page of pages$ | async">
+  <a [routerLink]="['', 'page', page.path]"
+    ><h2>{{ page.title }}</h2></a
+  >
+  <p>{{ page.shortDescription }}</p>
+</ng-container>

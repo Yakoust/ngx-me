@@ -1,0 +1,26 @@
+.scrollup-button {
+  margin: 14px;
+  mat-icon {
+    color: white;
+  }
+  &--fixed {
+    bottom: 16px;
+    position: fixed;
+    right: 16px;
+  }
+}
+.sticky {
+  height: 100%;
+  position: sticky;
+  top: 4rem;
+}
+.summary {
+  max-width: 300px;
+  position: absolute;
+  right: -350px;
+}
+.tags {
+  left: -250px;
+  max-width: 200px;
+  position: absolute;
+}

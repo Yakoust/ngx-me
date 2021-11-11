@@ -1,0 +1,11 @@
+@function soften-color($color, $percent) {
+  @if lightness($color) < 50% {
+    @return lighten($color, $percent);
+  }
+  @return darken($color, $percent/2);
+}
+
+$rem-baseline: 16px !default;
+@function rem($size) {
+  @return $size / $rem-baseline * 1rem;
+}

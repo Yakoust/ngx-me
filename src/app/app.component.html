@@ -1,6 +1,20 @@
-<mat-toolbar>
-  <span>/ME</span>
-</mat-toolbar>
+<header class="mat-elevation-z4">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h1 [routerLink]="['']">Ngx <strong>Me</strong></h1>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <button mat-icon-button (click)="toggleTheme()">
+        <mat-icon>
+          <img [hidden]="theme == 'light'" src="assets/icon-light-on.svg" />
+          <img [hidden]="theme == 'dark'" src="assets/icon-light-off.svg" />
+        </mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>
 <main>
-  <h1>Damien Marest</h1>
+  <div class="outlet-wrapper">
+    <router-outlet></router-outlet>
+  </div>
 </main>

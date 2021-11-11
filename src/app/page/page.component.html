@@ -1,0 +1,5 @@
+<ng-container *ngIf="page$ | async as page">
+  <wff-scrollspy-nav-layout [headings]="headings" [page]="page">
+    <markdown emoji [src]="'../assets/pages/' + page.fileName" (load)="onLoad()"></markdown>
+  </wff-scrollspy-nav-layout>
+</ng-container>
