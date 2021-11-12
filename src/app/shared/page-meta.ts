@@ -6,5 +6,6 @@ export interface PageMeta {
   category: string;
   shortDescription: string;
   tags: string[];
-  keywords: string[];
+  withLinks: boolean;
+  withSummary: boolean;
 }

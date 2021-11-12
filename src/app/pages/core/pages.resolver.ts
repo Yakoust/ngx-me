@@ -20,8 +20,6 @@ export class PagesResolver implements Resolve<PageMeta[]> {
         return this.pagesService.getAllPagesByCategory(route.queryParamMap.get('q') ?? '');
       case RouteName.Tag:
         return this.pagesService.getAllPagesByTag(route.queryParamMap.get('q') ?? '');
-      case RouteName.Keyword:
-        return this.pagesService.getAllPagesByKeywords(route.queryParamMap.get('q') ?? '');
       default:
         return of([]);
     }

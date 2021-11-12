@@ -4,12 +4,11 @@ import * as Gumshoe from 'gumshoejs';
 import { first } from 'rxjs/operators';
 
 @Component({
-  selector: 'wff-scrollspy-nav',
+  selector: 'ngxme-scrollspy-nav',
   templateUrl: './scroll-spy-nav.component.html',
 })
 export class ScrollSpyNavComponent implements OnChanges, OnDestroy {
-  @Input()
-  headings: Element[] | null = null;
+  @Input() headings: Element[] | null = null;
 
   private scrollSpy: Gumshoe | undefined;
 

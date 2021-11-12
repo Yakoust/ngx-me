@@ -9,7 +9,7 @@ import * as routerSelectors from '../core/stores/router/router.selectors'
 
 @Component({
   animations: [ZOOM_ANIMATION],
-  selector: 'wff-page',
+  selector: 'ngxme-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss'],
 })

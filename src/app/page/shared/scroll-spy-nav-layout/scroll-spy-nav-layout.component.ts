@@ -6,7 +6,7 @@ import { ZOOM_ANIMATION } from '../zoom.animation';
 
 @Component({
   animations: [ZOOM_ANIMATION],
-  selector: 'wff-scrollspy-nav-layout',
+  selector: 'ngxme-scrollspy-nav-layout',
   templateUrl: './scroll-spy-nav-layout.component.html',
   styleUrls: ['./scroll-spy-nav-layout.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,6 +17,12 @@ export class ScrollSpyNavLayoutComponent {
 
   @Input()
   page: PageMeta | null = null;
+
+  @Input()
+  displaySummary = false;
+
+  @Input()
+  displayLinks = false;
 
   showScrollUpButton = false;
   RouteName = RouteName;

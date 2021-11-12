@@ -1,10 +1,10 @@
-@import '~@angular/material/theming';
 @import 'utils';
+@import 'themes';
 // variables
 
 $viewport-max-width: 1024px;
 $viewport-offset-x: 64px;
-$toolbar-desktop-height: rem(96px);
+$toolbar-desktop-height: rem(64px);
 
 // mixins
 
@@ -20,6 +20,7 @@ $toolbar-desktop-height: rem(96px);
 
 :host {
   display: block;
+  height: 100%;
 }
 mat-toolbar {
   padding: 0 30px;
@@ -28,15 +29,20 @@ mat-toolbar {
   z-index: 9999;
   h1 {
     cursor: pointer;
+    font-size: 32px !important;
   }
-  fret-search-bar {
-    max-width: 500px;
-    width: inherit;
+  .avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 1rem;
   }
-}
-main {
-  min-height: calc(100vh - #{$toolbar-desktop-height});
-  padding-top: $viewport-offset-x;
+  .social {
+    width:32px;
+    height: 32px;
+    margin-left: 1rem;
+  }
 }
 .spacer {
   flex: 1 1 auto;
@@ -44,14 +50,30 @@ main {
 
 .outlet-wrapper {
   @include viewport-width();
-  margin-bottom: $viewport-offset-x;
-  margin-top: $viewport-offset-x;
   position: relative;
 }
+
 mat-sidenav-container {
-  height: calc(100vh - 64px);
-  margin-top: 64px;
+  height: 100%;
+  padding-top: 64px
+;
+}
+mat-sidenav-content {
+  padding-top: 2rem;
 }
 mat-sidenav {
-  padding: 1rem;
+  padding: calc(64px + 2rem) 1rem;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  mat-accordion > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0 1rem;
+  }
 }

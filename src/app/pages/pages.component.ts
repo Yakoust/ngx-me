@@ -7,7 +7,7 @@ import { RouteName } from '../shared/routes/route-name';
 import * as routerSelectors from '../core/stores/router/router.selectors'
 
 @Component({
-  selector: 'wff-pages',
+  selector: 'ngxme-pages',
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss'],
 })

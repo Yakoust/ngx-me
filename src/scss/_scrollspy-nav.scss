@@ -1,11 +1,16 @@
-@mixin scrollspy-nav($theme) {
-  $accent: map-get($theme, accent);
-  $foreground: map-get($theme, foreground);
+@use "sass:map";
+@use '@angular/material' as mat;
 
+@mixin scrollspy-nav($theme) {
+  $accent: map.get($theme, accent);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
+  a {
+    color: inherit;
+  }
   ul.scrollspy-nav {
     padding: 0;
     li {
-
       border-left: 2px solid mat-color($accent);
       border-radius: 2px;
       box-shadow: inset 1px 0 0 mat-color($accent);
@@ -32,5 +37,15 @@
         }
       }
     }
+  }
+
+  mat-chip {
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  .page-content {
+    background-color: mat.get-color-from-palette($background, dialog);
+    padding: 1rem;
   }
 }

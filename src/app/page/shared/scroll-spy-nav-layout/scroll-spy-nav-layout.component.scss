@@ -12,15 +12,14 @@
 .sticky {
   height: 100%;
   position: sticky;
-  top: 4rem;
 }
 .summary {
   max-width: 300px;
   position: absolute;
-  right: -350px;
+  right: -300px;
 }
 .tags {
-  left: -250px;
+  left: -300px;
   max-width: 200px;
   position: absolute;
 }

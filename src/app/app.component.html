@@ -1,20 +1,55 @@
 <header class="mat-elevation-z4">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <h1 [routerLink]="['']">Ngx <strong>Me</strong></h1>
+      <a target="_blank" href="https://twitter.com/yakoust">
+        <img class="social" src="assets/twitter-brands.svg" />
+      </a>
+      <a href="https://github.com/Yakoust" target="_blank">
+        <img class="social" src="assets/github-brands.svg" />
+      </a>
+      <a href="https://www.linkedin.com/in/damien-marest-116b4564/" target="_blank">
+        <img class="social" src="assets/linkedin-brands.svg" />
+      </a>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+
+      <img class="avatar" src="assets/oim.png" />
+      <h1 [routerLink]="['']">Damien Marest</h1>
+
       <div class="spacer"></div>
       <div class="spacer"></div>
       <button mat-icon-button (click)="toggleTheme()">
         <mat-icon>
-          <img [hidden]="theme == 'light'" src="assets/icon-light-on.svg" />
-          <img [hidden]="theme == 'dark'" src="assets/icon-light-off.svg" />
+          <img [hidden]="theme === 'light'" src="assets/icon-light-on.svg" />
+          <img [hidden]="theme === 'dark'" src="assets/icon-light-off.svg" />
         </mat-icon>
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened>Home</mat-sidenav>
+  <mat-sidenav mode="side" opened>
+    <mat-accordion displayMode="flat" *ngIf="navigation$ | async as nav">
+      <ng-container *ngFor="let n of nav">
+        <a mat-flat-button *ngIf="n.value.length === 1" [routerLink]="['', RouteName.Page, n.value[0].path]">{{n.value[0].title}}</a>
+        <mat-expansion-panel [class.mat-expansion-panel]="false" *ngIf="n.value.length > 1" [@.disabled]="true" [hideToggle]="n.value.length === 1">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a [routerLink]="['', RouteName.Category]" [queryParams]="{q: n.key}"  >{{n.key}}</a>
+
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ng-container *ngIf="n.value.length > 1">
+            <ul>
+              <li *ngFor="let page of n.value">
+                <a [routerLink]="['', RouteName.Page, page.path]">{{page.title}}</a>
+              </li>
+            </ul>
+          </ng-container>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-accordion>
+  </mat-sidenav>
   <mat-sidenav-content>
     <div class="outlet-wrapper">
       <router-outlet></router-outlet>

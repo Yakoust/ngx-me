@@ -1,0 +1,18 @@
+@use "sass:map";
+@use '@angular/material' as mat;
+
+@mixin pages($theme) {
+  $background: map.get($theme, background);
+  .page-description {
+    background-color: mat.get-color-from-palette($background, dialog);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+  h1 {
+    text-transform: capitalize;
+  }
+  a {
+    color: inherit;
+  }
+}

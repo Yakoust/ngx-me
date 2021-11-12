@@ -1,32 +1,30 @@
-<div>
-  <ng-container *ngIf="headings && headings.length > 0">
-    <div class="sticky">
-      <div class="summary">
-        <h1>Summary</h1>
-        <wff-scrollspy-nav [headings]="headings"></wff-scrollspy-nav>
-        <button class="scrollup-button" mat-mini-fab (click)="onScrollUp()" *ngIf="showScrollUpButton" [@zoomAnimation]>
-          <mat-icon>keyboard_arrow_up</mat-icon>
-        </button>
-      </div>
+<ng-container *ngIf="displaySummary && headings && headings.length > 0">
+  <div class="sticky">
+    <div class="summary">
+      <h3>Summary</h3>
+      <ngxme-scrollspy-nav [headings]="headings"></ngxme-scrollspy-nav>
+      <button class="scrollup-button" mat-mini-fab (click)="onScrollUp()" *ngIf="showScrollUpButton" [@zoomAnimation]>
+        <mat-icon>keyboard_arrow_up</mat-icon>
+      </button>
     </div>
-  </ng-container>
-  <ng-container *ngIf="page">
-    <div class="sticky">
-      <div class="tags">
-        <h1>Category</h1>
-        <mat-chip [routerLink]="['', RouteName.Category]" [queryParams]="{ q: page.category }">{{ page.category }}</mat-chip>
-        <h1>Tags</h1>
-        <mat-chip-list>
-          <mat-chip *ngFor="let tag of page.tags" [routerLink]="['', RouteName.Tag]" [queryParams]="{ q: tag }">{{ tag }}</mat-chip>
-        </mat-chip-list>
-        <h1>Keywords</h1>
-        <mat-chip-list>
-          <mat-chip *ngFor="let keyword of page.keywords" [routerLink]="['', RouteName.Keyword]" [queryParams]="{ q: keyword }">{{
-            keyword
-          }}</mat-chip>
-        </mat-chip-list>
-      </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="displayLinks && page">
+  <div class="sticky">
+    <div class="tags">
+      <h3>Category</h3>
+      <mat-chip-list>
+      <mat-chip color="accent" selected [routerLink]="['', RouteName.Category]" [queryParams]="{ q: page.category }">{{ page.category }}</mat-chip>
+      </mat-chip-list>
+      <br>
+      <h3>Tags</h3>
+      <mat-chip-list>
+        <mat-chip color="accent" selected *ngFor="let tag of page.tags" [routerLink]="['', RouteName.Tag]" [queryParams]="{ q: tag }">{{ tag }}</mat-chip>
+      </mat-chip-list>
     </div>
-  </ng-container>
+  </div>
+</ng-container>
+<div class="page-content">
   <ng-content></ng-content>
 </div>
+

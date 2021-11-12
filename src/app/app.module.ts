@@ -16,6 +16,7 @@ import { reducers } from './reducer';
 import { RouterEffects } from './core/stores/router/router.effects';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

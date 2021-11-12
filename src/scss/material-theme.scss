@@ -2,17 +2,19 @@
 
 @import 'utils';
 @import 'scrollspy-nav';
+@import 'pages';
 @import 'themes';
 
 @mixin theme($theme, $name) {
   .#{$name}-theme {
     @include angular-material-theme($theme);
     @include scrollspy-nav($theme);
+    @include pages($theme);
   }
 }
 
 @mixin material-core() {
-  $font-family: 'Google Sans', 'Helvetica Neue', sans-serif;
+  $font-family: "Segoe UI", Arial, sans-serif;
   $mat-typography: mat-typography-config($font-family);
   body {
     font-family: $font-family;
