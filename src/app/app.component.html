@@ -13,8 +13,11 @@
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
-<main>
-  <div class="outlet-wrapper">
-    <router-outlet></router-outlet>
-  </div>
-</main>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>Home</mat-sidenav>
+  <mat-sidenav-content>
+    <div class="outlet-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

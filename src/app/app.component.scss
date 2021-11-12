@@ -48,3 +48,10 @@ main {
   margin-top: $viewport-offset-x;
   position: relative;
 }
+mat-sidenav-container {
+  height: calc(100vh - 64px);
+  margin-top: 64px;
+}
+mat-sidenav {
+  padding: 1rem;
+}

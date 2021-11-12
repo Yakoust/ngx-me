@@ -15,6 +15,7 @@ import { RouterSerializer } from './core/stores/router/router-serializer';
 import { reducers } from './reducer';
 import { RouterEffects } from './core/stores/router/router.effects';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

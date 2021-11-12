@@ -2,8 +2,7 @@
 
 @import 'utils';
 @import 'scrollspy-nav';
-@import 'light-theme';
-@import 'dark-theme';
+@import 'themes';
 
 @mixin theme($theme, $name) {
   .#{$name}-theme {
