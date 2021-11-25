@@ -3,63 +3,33 @@
 // variables
 
 $viewport-max-width: 1024px;
-$viewport-offset-x: 64px;
+$viewport-offset-x: 3rem;
 $toolbar-desktop-height: rem(64px);
 
-// mixins
-
-@mixin viewport-width($padding: true) {
-  margin: 0 auto;
-  max-width: $viewport-max-width;
-
-  @if ($padding) {
-    padding-left: $viewport-offset-x;
-    padding-right: $viewport-offset-x;
-  }
-}
 
 :host {
   display: block;
   height: 100%;
 }
 mat-toolbar {
-  padding: 0 30px;
   position: fixed;
   top: 0;
   z-index: 9999;
-  h1 {
-    cursor: pointer;
-    font-size: 32px !important;
-  }
-  .avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background-color: white;
-    margin-right: 1rem;
-  }
-  .social {
-    width:32px;
-    height: 32px;
-    margin-left: 1rem;
-  }
 }
 .spacer {
   flex: 1 1 auto;
 }
 
 .outlet-wrapper {
-  @include viewport-width();
   position: relative;
+  padding: 3rem;
 }
 
 mat-sidenav-container {
   height: 100%;
-  padding-top: 64px
-;
-}
-mat-sidenav-content {
-  padding-top: 2rem;
+  padding-top: rem(64px);
+}mat-sidenav-content {
+  height: 100%;
 }
 mat-sidenav {
   padding: calc(64px + 2rem) 1rem;
@@ -75,5 +45,42 @@ mat-sidenav {
     font-size: 15px;
     font-weight: 400;
     padding: 0 1rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .name {
+    margin-top: 0.25rem;
+    font-size: 1.5rem;
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+ }
+
+  .designation {
+    margin-top: -0.5rem;
+    font-size: 1rem;
+  }
+
+  .socials {
+    display: grid;
+    grid-template-areas: "twitter github linkedIn";
+  }
+  .social {
+    width:32px;
+    height: 32px;
+    margin-left: 1rem;
+    color: currentColor;
+  }
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }

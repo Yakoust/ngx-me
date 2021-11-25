@@ -17,6 +17,9 @@ import { RouterEffects } from './core/stores/router/router.effects';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDividerModule } from '@angular/material/divider';
+import {BreakpointEffects} from "./core/stores/breakpoint/breakpoint.effects";
+import * as breakpointReducer from './core/stores/breakpoint/breakpoint.reducer';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
       navigationActionTiming: NavigationActionTiming.PostActivation,
     }),
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([RouterEffects]),
+    StoreModule.forFeature(breakpointReducer.featureKey, breakpointReducer.reducer),
+    EffectsModule.forRoot([RouterEffects, BreakpointEffects]),
     AppRoutingModule,
     HttpClientModule,
     MarkdownModule.forRoot({
@@ -42,6 +46,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatButtonModule,
     MatSidenavModule,
     MatExpansionModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

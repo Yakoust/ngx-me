@@ -1,3 +1,16 @@
+.main-content {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "page summary";
+  grid-auto-columns: auto minmax(auto, max-content);
+}
+.page-nav {
+  position: sticky;
+  padding-left: 3rem;
+}
+mat-divider {
+  margin: 3rem 0;
+}
 .scrollup-button {
   margin: 14px;
   mat-icon {
@@ -9,17 +22,8 @@
     right: 16px;
   }
 }
-.sticky {
-  height: 100%;
-  position: sticky;
-}
-.summary {
-  max-width: 300px;
+.popup-button {
   position: absolute;
-  right: -300px;
-}
-.tags {
-  left: -300px;
-  max-width: 200px;
-  position: absolute;
+  right: 2rem;
+  top: 2rem;
 }

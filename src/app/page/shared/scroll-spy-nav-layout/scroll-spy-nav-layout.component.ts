@@ -24,8 +24,12 @@ export class ScrollSpyNavLayoutComponent {
   @Input()
   displayLinks = false;
 
+  @Input()
+  displayMode: 'side' | 'popup' = 'side';
+
   showScrollUpButton = false;
   RouteName = RouteName;
+  isOpen = false;
 
   @HostListener('window:scroll')
   onWindowScroll(): void {

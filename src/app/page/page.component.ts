@@ -1,11 +1,12 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import {delay, Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PageMeta } from '../shared/page-meta';
 import { RouteName } from '../shared/routes/route-name';
 import { ZOOM_ANIMATION } from './shared/zoom.animation';
 import * as routerSelectors from '../core/stores/router/router.selectors'
+import * as breakpointSelectors from "../core/stores/breakpoint/breakpoint.selectors";
 
 @Component({
   animations: [ZOOM_ANIMATION],
@@ -20,6 +21,8 @@ export class PageComponent {
     map(({ content }) => content)
   );
   RouteName = RouteName;
+  isDesktop$ = this.store.pipe(select(breakpointSelectors.isDesktop)).pipe(delay(1));
+
   constructor(private store: Store, private elementRef: ElementRef<HTMLElement>) {}
 
   showScrollUpButton = false;

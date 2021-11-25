@@ -48,4 +48,11 @@
     background-color: mat.get-color-from-palette($background, dialog);
     padding: 1rem;
   }
+
+  .popup {
+    padding: 1rem;
+    background-color: mat.get-color-from-palette($background, dialog);
+    border-radius: 15px;
+    color: mat-color($foreground, text);
+  }
 }
