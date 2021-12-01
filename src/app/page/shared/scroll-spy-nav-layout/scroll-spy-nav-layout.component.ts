@@ -31,9 +31,9 @@ export class ScrollSpyNavLayoutComponent {
   RouteName = RouteName;
   isOpen = false;
 
-  @HostListener('window:scroll')
-  onWindowScroll(): void {
-    this.showScrollUpButton = Math.ceil(window.pageYOffset) > 64;
+  @HostListener('window:scroll', ['$event']) onWindowScroll() {
+    console.log('hey')
+    this.showScrollUpButton = Math.ceil(window.scrollY) > 64;
   }
 
   onScrollUp(): void {

@@ -12,7 +12,7 @@ import {MatDividerModule} from "@angular/material/divider";
 import {OverlayModule} from '@angular/cdk/overlay';
 
 @NgModule({
-    imports: [CommonModule, MarkdownModule, MatButtonModule, ScrollSpyNavModule, MatIconModule, MatChipsModule, RouterModule, MatDividerModule, OverlayModule],
+  imports: [CommonModule, MarkdownModule, MatButtonModule, ScrollSpyNavModule, MatIconModule, MatChipsModule, RouterModule, MatDividerModule, OverlayModule],
   declarations: [ScrollSpyNavLayoutComponent],
   exports: [ScrollSpyNavLayoutComponent],
 })

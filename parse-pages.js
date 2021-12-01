@@ -11,7 +11,7 @@ try {
     const pages = [];
     files.forEach(file => {
       let fileContents = fs.readFileSync(file, 'utf8');
-      let page = yaml.safeLoad(fileContents.split('---', 2)[1]);
+      let page = yaml.load(fileContents.split('---', 2)[1]);
       const fragments = file.split('/');
       const pagesIndex =  fragments.indexOf('pages');
       page.fileName = fragments.slice(pagesIndex + 1).join('/');

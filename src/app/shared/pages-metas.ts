@@ -13,8 +13,19 @@ export const pagesMetas: PageMeta[] = [
     fileName: 'contact.md'
   },
   {
-    path: 'gamba-acoustique',
+    path: 'airbus',
     rank: 3,
+    title: 'Airbus Defence and Space',
+    category: 'Experiences',
+    shortDescription: 'Airbus Defence and Space - Webfactory',
+    withSummary: true,
+    withLinks: true,
+    tags: [ 'Angular', 'NgRx (redux)', 'OpenLayers', 'Gitlab CI' ],
+    fileName: 'experiences/airbus.md'
+  },
+  {
+    path: 'gamba-acoustique',
+    rank: 7,
     title: 'Gamba acoustique',
     category: 'Experiences',
     shortDescription: 'Gamba acoustique',
@@ -24,15 +35,45 @@ export const pagesMetas: PageMeta[] = [
     fileName: 'experiences/gamba-acoustique.md'
   },
   {
-    path: 'neo-soft',
+    path: 'geosys',
+    rank: 5,
+    title: 'Geosys',
+    category: 'Experiences',
+    shortDescription: 'Geosys - Smart Farming',
+    withSummary: true,
+    withLinks: true,
+    tags: [ 'C#', '.NET', 'BigData' ],
+    fileName: 'experiences/geosys.md'
+  },
+  {
+    path: 'neo-soft-2008',
+    rank: 6,
+    title: 'Neo Soft',
+    category: 'Experiences',
+    shortDescription: 'Neo Soft (2008 -> 20014)',
+    withSummary: true,
+    withLinks: true,
+    tags: [ 'c++', 'java', 'C#', '.NET', 'Python', 'Sharepoint', 'Php' ],
+    fileName: 'experiences/neo-soft-2008.md'
+  },
+  {
+    path: 'neo-soft-2017',
     rank: 4,
     title: 'Neo Soft',
     category: 'Experiences',
     shortDescription: 'Neo Soft',
     withSummary: true,
     withLinks: true,
-    tags: [ 'MFC', 'C++', 'C#' ],
-    fileName: 'experiences/neo-soft.md'
+    tags: [
+      'Angular',
+      'NgRx',
+      'OpenLayers',
+      'Gitlab',
+      'Spring',
+      'MongoDb',
+      'Iot'
+    ],
+    fileName: 'experiences/neo-soft-2017.md'
   },
   {
     path: 'formations',

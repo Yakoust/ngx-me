@@ -2,11 +2,15 @@
   display: grid;
   width: 100%;
   grid-template-areas: "page summary";
-  grid-auto-columns: auto minmax(auto, max-content);
+  grid-auto-columns: auto minmax(min-content, 25%);
+}
+.small {
+  grid-auto-columns: auto 0;
 }
 .page-nav {
   position: sticky;
-  padding-left: 3rem;
+  padding-left: 2rem;
+  top: 2rem;
 }
 mat-divider {
   margin: 3rem 0;
@@ -23,7 +27,8 @@ mat-divider {
   }
 }
 .popup-button {
-  position: absolute;
+  position: sticky;
   right: 2rem;
-  top: 2rem;
+  top: 0;
+  margin-top: -1rem;
 }
