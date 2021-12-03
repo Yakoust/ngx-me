@@ -1,7 +1,7 @@
-<header class="mat-elevation-z4">
+<header class="mat-elevation-z4" *ngIf="(isDesktop$ | async) === false">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <button mat-icon-button *ngIf="sidenav && sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon *ngIf="!sidenav.opened">
             menu
         </mat-icon>
@@ -20,9 +20,15 @@
   </mat-toolbar>
 </header>
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened>
+  <mat-sidenav [class.mobile]="(isDesktop$ | async) === false" #sidenav [mode]="(isDesktop$ | async) ? 'side' : 'over'" opened>
 
     <div class="header">
+      <button class="theme-button" *ngIf="isDesktop$ | async" mat-mini-fab (click)="toggleTheme()">
+        <mat-icon>
+          <img [hidden]="theme === 'light'" src="assets/icon-light-on.svg" />
+          <img [hidden]="theme === 'dark'" src="assets/icon-light-off.svg" />
+        </mat-icon>
+      </button>
     <img class="avatar mat-elevation-z8" src="assets/oim.png" />
 
     <h2 class="name">Damien Marest</h2>
@@ -62,7 +68,7 @@
       </ng-container>
     </mat-accordion>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content [class.mobile]="(isDesktop$ | async) === false">
     <div class="outlet-wrapper">
       <router-outlet></router-outlet>
     </div>

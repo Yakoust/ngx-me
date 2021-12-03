@@ -37,10 +37,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.isDesktop$.pipe(delay(1))
       .subscribe((isDesktop: boolean) => {
         if (isDesktop) {
-          this.sidenav.mode = 'side';
           this.sidenav.open();
         } else {
-          this.sidenav.mode = 'over';
           this.sidenav.close();
         }
       });

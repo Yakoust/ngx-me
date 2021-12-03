@@ -1,11 +1,5 @@
 @import 'utils';
 @import 'themes';
-// variables
-
-$viewport-max-width: 1024px;
-$viewport-offset-x: 3rem;
-$toolbar-desktop-height: rem(64px);
-
 
 :host {
   display: block;
@@ -27,12 +21,23 @@ mat-toolbar {
 
 mat-sidenav-container {
   height: 100%;
-  padding-top: rem(64px);
-}mat-sidenav-content {
+}
+
+.mobile {
+  margin-top: rem(64px);
+  padding-top: 1rem;
+}
+
+mat-sidenav-content {
   height: 100%;
 }
+.theme-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
 mat-sidenav {
-  padding: calc(64px + 2rem) 1rem;
+  padding: 3rem 1rem;
   a {
     text-decoration: none;
     color: inherit;
