@@ -1,12 +1,13 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import {delay, Observable} from 'rxjs';
+import { Observable, delay } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import * as breakpointSelectors from '../core/stores/breakpoint/breakpoint.selectors';
+import * as routerSelectors from '../core/stores/router/router.selectors';
 import { PageMeta } from '../shared/page-meta';
 import { RouteName } from '../shared/routes/route-name';
 import { ZOOM_ANIMATION } from './shared/zoom.animation';
-import * as routerSelectors from '../core/stores/router/router.selectors'
-import * as breakpointSelectors from "../core/stores/breakpoint/breakpoint.selectors";
 
 @Component({
   animations: [ZOOM_ANIMATION],
@@ -21,9 +22,14 @@ export class PageComponent {
     map(({ content }) => content)
   );
   RouteName = RouteName;
-  isDesktop$ = this.store.pipe(select(breakpointSelectors.isDesktop)).pipe(delay(1));
+  isDesktop$ = this.store
+    .pipe(select(breakpointSelectors.isDesktop))
+    .pipe(delay(1));
 
-  constructor(private store: Store, private elementRef: ElementRef<HTMLElement>) {}
+  constructor(
+    private store: Store,
+    private elementRef: ElementRef<HTMLElement>
+  ) {}
 
   showScrollUpButton = false;
 
@@ -43,7 +49,9 @@ export class PageComponent {
 
   private setHeadings(): void {
     const headings: Element[] = [];
-    this.elementRef.nativeElement.querySelectorAll('h2').forEach((x) => headings.push(x));
+    this.elementRef.nativeElement
+      .querySelectorAll('h2')
+      .forEach((x) => headings.push(x));
     this.headings = headings;
   }
 }

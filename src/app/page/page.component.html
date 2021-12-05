@@ -1,5 +1,15 @@
 <ng-container *ngIf="page$ | async as page">
-  <ngxme-scrollspy-nav-layout [displayMode]="(isDesktop$ | async) ? 'side' : 'popup'" [headings]="headings" [page]="page" [displayLinks]="page.withLinks" [displaySummary]="page.withSummary">
-    <markdown emoji [src]="'../assets/pages/' + page.fileName" (load)="onLoad()"></markdown>
+  <ngxme-scrollspy-nav-layout
+    [displayMode]="(isDesktop$ | async) ? 'side' : 'popup'"
+    [headings]="headings"
+    [page]="page"
+    [displayLinks]="page.withLinks"
+    [displaySummary]="page.withSummary"
+  >
+    <markdown
+      emoji
+      [src]="'../assets/pages/' + page.fileName"
+      (load)="onLoad()"
+    ></markdown>
   </ngxme-scrollspy-nav-layout>
 </ng-container>

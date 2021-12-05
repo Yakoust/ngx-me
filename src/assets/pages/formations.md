@@ -10,7 +10,6 @@ tags:
   - formation
 --->
 
-
 > Licence Professionelle option Qualité du logiciel
 
 IUT Paul Sabatier Toulouse

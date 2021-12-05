@@ -8,6 +8,11 @@ import { ScrollSpyNavLayoutModule } from './shared/scroll-spy-nav-layout/scroll-
 
 @NgModule({
   declarations: [PageComponent],
-  imports: [CommonModule, PageeRoutingModule, MarkdownModule.forChild(), ScrollSpyNavLayoutModule],
+  imports: [
+    CommonModule,
+    PageeRoutingModule,
+    MarkdownModule.forChild(),
+    ScrollSpyNavLayoutModule,
+  ],
 })
 export class PageModule {}

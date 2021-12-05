@@ -11,11 +11,13 @@ const routes: Routes = [
   },
   {
     path: RouteName.Tag,
-    loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
+    loadChildren: () =>
+      import('./pages/pages.module').then((m) => m.PagesModule),
   },
   {
     path: RouteName.Category,
-    loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
+    loadChildren: () =>
+      import('./pages/pages.module').then((m) => m.PagesModule),
   },
 ];
 

@@ -20,6 +20,6 @@ Je suis un développeur enthousiaste
 
 ## A propos de moi
 
-Je suis développeur par vocation, par passion. Mes expériences m'ont permis d'acquérir de l'expertise dans divers langages et domaines, mais je n'ai pas vraiment d'église. J'adore apprendre et je sais m'adapter à de nouveaux contextes techniques rapidement. 
+Je suis développeur par vocation, par passion. Mes expériences m'ont permis d'acquérir de l'expertise dans divers langages et domaines, mais je n'ai pas vraiment d'église. J'adore apprendre et je sais m'adapter à de nouveaux contextes techniques rapidement.
 
-Je suis un développeur agile convaincu. 
+Je suis un développeur agile convaincu.

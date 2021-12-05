@@ -39,12 +39,13 @@ Mise en place des méthodes de la webfactory (agilité, CI, tests et qualité)
 
 ### Technologies
 
-* Angular 5
-* NgRx (redux)
-* OpenLayers
-* Gitlab CI
+- Angular 5
+- NgRx (redux)
+- OpenLayers
+- Gitlab CI
 
 ## Mission Intesens
+
 ### Période
 
 Mars à Juillet 2017
@@ -55,15 +56,15 @@ INTESENS conçoit et déploie des solutions de maintenance connectée pour des a
 
 Développement d'une plateforme pour la maintenance des batteries des barrières de passage à niveau.
 
-L'objet de la plateforme est de récupérer les données des objets connectés associés aux batteries des barrières de passage à niveaux au travers du reseau Sigfox et de traiter l'information à l'aide d'une architecture micro-services et enfin afficher l'état des batteries sur un dashboard Angular à l'opérateur. 
+L'objet de la plateforme est de récupérer les données des objets connectés associés aux batteries des barrières de passage à niveaux au travers du reseau Sigfox et de traiter l'information à l'aide d'une architecture micro-services et enfin afficher l'état des batteries sur un dashboard Angular à l'opérateur.
 
 ### Technologies
 
-* Angular 2 à 4
-* Spring boot
-* MongoDB
-* Kafka
-* Python
-* IBM Bluemix
-* IOT
-* Micro-services
+- Angular 2 à 4
+- Spring boot
+- MongoDB
+- Kafka
+- Python
+- IBM Bluemix
+- IOT
+- Micro-services

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { PagesResolver } from './core/pages.resolver';
 import { PagesComponent } from './pages.component';
 

@@ -1,30 +1,31 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule, SecurityContext } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EffectsModule } from '@ngrx/effects';
+import {
+  NavigationActionTiming,
+  StoreRouterConnectingModule,
+} from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar'
-import { MatIconModule } from '@angular/material/icon'
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule, NavigationActionTiming } from '@ngrx/router-store';
-import { StoreModule } from '@ngrx/store';
-import { MarkdownModule } from 'ngx-markdown';
-import { RouterSerializer } from './core/stores/router/router-serializer';
-import { reducers } from './reducer';
-import { RouterEffects } from './core/stores/router/router.effects';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatDividerModule } from '@angular/material/divider';
-import {BreakpointEffects} from "./core/stores/breakpoint/breakpoint.effects";
+import { BreakpointEffects } from './core/stores/breakpoint/breakpoint.effects';
 import * as breakpointReducer from './core/stores/breakpoint/breakpoint.reducer';
+import { RouterSerializer } from './core/stores/router/router-serializer';
+import { RouterEffects } from './core/stores/router/router.effects';
+import { reducers } from './reducer';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     StoreRouterConnectingModule.forRoot({
@@ -32,7 +33,10 @@ import * as breakpointReducer from './core/stores/breakpoint/breakpoint.reducer'
       navigationActionTiming: NavigationActionTiming.PostActivation,
     }),
     StoreModule.forRoot(reducers),
-    StoreModule.forFeature(breakpointReducer.featureKey, breakpointReducer.reducer),
+    StoreModule.forFeature(
+      breakpointReducer.featureKey,
+      breakpointReducer.reducer
+    ),
     EffectsModule.forRoot([RouterEffects, BreakpointEffects]),
     AppRoutingModule,
     HttpClientModule,
@@ -46,9 +50,9 @@ import * as breakpointReducer from './core/stores/breakpoint/breakpoint.reducer'
     MatButtonModule,
     MatSidenavModule,
     MatExpansionModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

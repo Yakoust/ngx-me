@@ -1,4 +1,12 @@
-import { Component, ElementRef, Input, NgZone, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  NgZone,
+  OnChanges,
+  OnDestroy,
+  SimpleChanges,
+} from '@angular/core';
 // @ts-ignore
 import * as Gumshoe from 'gumshoejs';
 import { first } from 'rxjs/operators';
@@ -12,7 +20,10 @@ export class ScrollSpyNavComponent implements OnChanges, OnDestroy {
 
   private scrollSpy: Gumshoe | undefined;
 
-  constructor(private elementRef: ElementRef<HTMLElement>, private zone: NgZone) {}
+  constructor(
+    private elementRef: ElementRef<HTMLElement>,
+    private zone: NgZone
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['headings'] && changes['headings'].currentValue) {

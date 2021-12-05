@@ -1,9 +1,9 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 
-@import 'utils';
-@import 'scrollspy-nav';
-@import 'pages';
-@import 'themes';
+@import "utils";
+@import "scrollspy-nav";
+@import "pages";
+@import "themes";
 
 @mixin theme($theme, $name) {
   .#{$name}-theme {
@@ -26,5 +26,5 @@
 }
 
 @include material-core();
-@include theme($light-theme, 'light');
-@include theme($dark-theme, 'dark');
+@include theme($light-theme, "light");
+@include theme($dark-theme, "dark");

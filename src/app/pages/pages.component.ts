@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import * as routerSelectors from '../core/stores/router/router.selectors';
 import { PageMeta } from '../shared/page-meta';
 import { RouteName } from '../shared/routes/route-name';
-import * as routerSelectors from '../core/stores/router/router.selectors'
 
 @Component({
   selector: 'ngxme-pages',
@@ -21,5 +22,7 @@ export class PagesComponent {
     select(routerSelectors.selectUrl),
     map((fragment) => fragment.slice(1) as RouteName)
   );
-  param$: Observable<string | undefined> = this.store.pipe(select(routerSelectors.selectQueryParam('q')));
+  param$: Observable<string | undefined> = this.store.pipe(
+    select(routerSelectors.selectQueryParam('q'))
+  );
 }

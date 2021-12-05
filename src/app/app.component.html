@@ -2,13 +2,9 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon *ngIf="!sidenav.opened">
-            menu
-        </mat-icon>
-        <mat-icon *ngIf="sidenav.opened">
-            close
-        </mat-icon>
-    </button>
+        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+      </button>
       <div class="spacer"></div>
       <button mat-icon-button (click)="toggleTheme()">
         <mat-icon>
@@ -20,47 +16,78 @@
   </mat-toolbar>
 </header>
 <mat-sidenav-container>
-  <mat-sidenav [class.mobile]="(isDesktop$ | async) === false" #sidenav [mode]="(isDesktop$ | async) ? 'side' : 'over'" opened>
-
+  <mat-sidenav
+    [class.mobile]="(isDesktop$ | async) === false"
+    #sidenav
+    [mode]="(isDesktop$ | async) ? 'side' : 'over'"
+    opened
+  >
     <div class="header">
-      <button class="theme-button" *ngIf="isDesktop$ | async" mat-mini-fab (click)="toggleTheme()">
+      <button
+        class="theme-button"
+        *ngIf="isDesktop$ | async"
+        mat-mini-fab
+        (click)="toggleTheme()"
+      >
         <mat-icon>
           <img [hidden]="theme === 'light'" src="assets/icon-light-on.svg" />
           <img [hidden]="theme === 'dark'" src="assets/icon-light-off.svg" />
         </mat-icon>
       </button>
-    <img class="avatar mat-elevation-z8" src="assets/oim.png" />
+      <img class="avatar mat-elevation-z8" src="assets/oim.png" />
 
-    <h2 class="name">Damien Marest</h2>
-    <h3 class="designation">Software Engineer</h3>
-  </div>
-  <div class="socials">
-    <a target="_blank" href="https://twitter.com/yakoust">
-      <img class="social" src="assets/twitter-brands.svg" />
-    </a>
-    <a href="https://github.com/Yakoust" target="_blank">
-      <img class="social" src="assets/github-brands.svg" />
-    </a>
-    <a href="https://www.linkedin.com/in/damien-marest-116b4564/" target="_blank">
-      <img class="social" src="assets/linkedin-brands.svg" />
-    </a>
-</div>
+      <h2 class="name">Damien Marest</h2>
+      <h3 class="designation">Software Engineer</h3>
+    </div>
+    <div class="socials">
+      <a target="_blank" href="https://twitter.com/yakoust">
+        <img class="social" src="assets/twitter-brands.svg" />
+      </a>
+      <a href="https://github.com/Yakoust" target="_blank">
+        <img class="social" src="assets/github-brands.svg" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/damien-marest-116b4564/"
+        target="_blank"
+      >
+        <img class="social" src="assets/linkedin-brands.svg" />
+      </a>
+    </div>
     <mat-divider></mat-divider>
 
     <mat-accordion displayMode="flat" *ngIf="navigation$ | async as nav">
       <ng-container *ngFor="let n of nav">
-        <a (click)="sidenav.mode === 'over' && sidenav.toggle()" mat-flat-button *ngIf="n.value.length === 1" [routerLink]="['', RouteName.Page, n.value[0].path]">{{n.value[0].title}}</a>
-        <mat-expansion-panel [class.mat-expansion-panel]="false" *ngIf="n.value.length > 1" [@.disabled]="true" [hideToggle]="n.value.length === 1">
+        <a
+          (click)="sidenav.mode === 'over' && sidenav.toggle()"
+          mat-flat-button
+          *ngIf="n.value.length === 1"
+          [routerLink]="['', RouteName.Page, n.value[0].path]"
+          >{{ n.value[0].title }}</a
+        >
+        <mat-expansion-panel
+          [class.mat-expansion-panel]="false"
+          *ngIf="n.value.length > 1"
+          [@.disabled]="true"
+          [hideToggle]="n.value.length === 1"
+        >
           <mat-expansion-panel-header>
             <mat-panel-title>
-              <a (click)="sidenav.mode === 'over' && sidenav.toggle()" [routerLink]="['', RouteName.Category]" [queryParams]="{q: n.key}"  >{{n.key}}</a>
-
+              <a
+                (click)="sidenav.mode === 'over' && sidenav.toggle()"
+                [routerLink]="['', RouteName.Category]"
+                [queryParams]="{ q: n.key }"
+                >{{ n.key }}</a
+              >
             </mat-panel-title>
           </mat-expansion-panel-header>
           <ng-container *ngIf="n.value.length > 1">
             <ul>
               <li *ngFor="let page of n.value">
-                <a (click)="sidenav.mode === 'over' && sidenav.toggle()" [routerLink]="['', RouteName.Page, page.path]">{{page.title}}</a>
+                <a
+                  (click)="sidenav.mode === 'over' && sidenav.toggle()"
+                  [routerLink]="['', RouteName.Page, page.path]"
+                  >{{ page.title }}</a
+                >
               </li>
             </ul>
           </ng-container>

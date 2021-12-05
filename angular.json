@@ -30,11 +30,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/files"
-            ],
+            "assets": ["src/favicon.ico", "src/assets", "src/files"],
             "styles": [
               "src/styles.scss",
               "src/scss/material-theme.scss",
@@ -60,14 +56,9 @@
               "node_modules/prismjs/components/prism-typescript.min.js",
               "node_modules/emoji-toolkit/lib/js/joypixels.min.js"
             ],
-            "allowedCommonJsDependencies": [
-              "gumshoejs",
-              "hammerjs"
-            ],
+            "allowedCommonJsDependencies": ["gumshoejs", "hammerjs"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/scss"
-              ]
+              "includePaths": ["src/scss"]
             }
           },
           "configurations": {
@@ -129,10 +120,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
@@ -143,10 +131,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }

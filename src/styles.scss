@@ -7,9 +7,9 @@ body {
   font-size: 15px;
 }
 blockquote {
-  border-left: 3px solid rgba(0,0,0,0.21);
+  border-left: 3px solid rgba(0, 0, 0, 0.21);
   padding: 0.5rem;
-  background-color: rgba(0,0,0,0.10);
+  background-color: rgba(0, 0, 0, 0.1);
   margin: 0;
   > p {
     margin: 0 !important;
@@ -51,7 +51,7 @@ table {
     height: 56px;
   }
 
-  th[align=''],
+  th[align=""],
   th:not([align]) {
     text-align: left;
   }

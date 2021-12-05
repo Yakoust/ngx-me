@@ -1,4 +1,4 @@
-import {PageMeta} from './page-meta';
+import { PageMeta } from './page-meta';
 
 export const pagesMetas: PageMeta[] = [
   {
@@ -9,8 +9,8 @@ export const pagesMetas: PageMeta[] = [
     shortDescription: 'Me contacter',
     withSummary: false,
     withLinks: false,
-    tags: [ 'contact' ],
-    fileName: 'contact.md'
+    tags: ['contact'],
+    fileName: 'contact.md',
   },
   {
     path: 'airbus',
@@ -20,8 +20,8 @@ export const pagesMetas: PageMeta[] = [
     shortDescription: 'Airbus Defence and Space - Webfactory',
     withSummary: true,
     withLinks: true,
-    tags: [ 'Angular', 'NgRx (redux)', 'OpenLayers', 'Gitlab CI' ],
-    fileName: 'experiences/airbus.md'
+    tags: ['Angular', 'NgRx (redux)', 'OpenLayers', 'Gitlab CI'],
+    fileName: 'experiences/airbus.md',
   },
   {
     path: 'gamba-acoustique',
@@ -31,8 +31,8 @@ export const pagesMetas: PageMeta[] = [
     shortDescription: 'Gamba acoustique',
     withSummary: true,
     withLinks: true,
-    tags: [ 'MFC', 'C++', 'C#' ],
-    fileName: 'experiences/gamba-acoustique.md'
+    tags: ['MFC', 'C++', 'C#'],
+    fileName: 'experiences/gamba-acoustique.md',
   },
   {
     path: 'geosys',
@@ -42,8 +42,8 @@ export const pagesMetas: PageMeta[] = [
     shortDescription: 'Geosys - Smart Farming',
     withSummary: true,
     withLinks: true,
-    tags: [ 'C#', '.NET', 'BigData' ],
-    fileName: 'experiences/geosys.md'
+    tags: ['C#', '.NET', 'BigData'],
+    fileName: 'experiences/geosys.md',
   },
   {
     path: 'neo-soft-2008',
@@ -53,8 +53,8 @@ export const pagesMetas: PageMeta[] = [
     shortDescription: 'Neo Soft (2008 -> 20014)',
     withSummary: true,
     withLinks: true,
-    tags: [ 'c++', 'java', 'C#', '.NET', 'Python', 'Sharepoint', 'Php' ],
-    fileName: 'experiences/neo-soft-2008.md'
+    tags: ['c++', 'java', 'C#', '.NET', 'Python', 'Sharepoint', 'Php'],
+    fileName: 'experiences/neo-soft-2008.md',
   },
   {
     path: 'neo-soft-2017',
@@ -71,9 +71,9 @@ export const pagesMetas: PageMeta[] = [
       'Gitlab',
       'Spring',
       'MongoDb',
-      'Iot'
+      'Iot',
     ],
-    fileName: 'experiences/neo-soft-2017.md'
+    fileName: 'experiences/neo-soft-2017.md',
   },
   {
     path: 'formations',
@@ -83,8 +83,8 @@ export const pagesMetas: PageMeta[] = [
     shortDescription: 'Mon parcours',
     withSummary: false,
     withLinks: false,
-    tags: [ 'formation' ],
-    fileName: 'formations.md'
+    tags: ['formation'],
+    fileName: 'formations.md',
   },
   {
     path: 'home',
@@ -94,7 +94,7 @@ export const pagesMetas: PageMeta[] = [
     shortDescription: 'Présentation',
     withSummary: false,
     withLinks: false,
-    tags: [ 'accueil' ],
-    fileName: 'home.md'
-  }
+    tags: ['accueil'],
+    fileName: 'home.md',
+  },
 ];

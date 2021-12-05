@@ -1,0 +1,13 @@
+{
+  ".js, .jsx, .es6, .es, .html": {
+    "parser": "babylon",
+    "style": "module-alias",
+    "options": {
+      "overrideBuiltinModules": true
+    }
+  },
+  ".ts, .tsx": {
+    "parser": "typescript",
+    "style": "module-alias"
+  }
+}

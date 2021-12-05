@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, HostListener, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  Input,
+} from '@angular/core';
 import { PageMeta } from 'src/app/shared/page-meta';
 
 import { RouteName } from '../../../shared/routes/route-name';
@@ -32,7 +37,7 @@ export class ScrollSpyNavLayoutComponent {
   isOpen = false;
 
   @HostListener('window:scroll', ['$event']) onWindowScroll() {
-    console.log('hey')
+    console.log('hey');
     this.showScrollUpButton = Math.ceil(window.scrollY) > 64;
   }
 

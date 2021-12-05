@@ -1,3 +1,6 @@
-import {createAction, props} from "@ngrx/store";
+import { createAction, props } from '@ngrx/store';
 
-export const updateIsDesktop = createAction('[Breakpoint] Update is desktop', props<{ isDesktop: boolean }>());
+export const updateIsDesktop = createAction(
+  '[Breakpoint] Update is desktop',
+  props<{ isDesktop: boolean }>()
+);

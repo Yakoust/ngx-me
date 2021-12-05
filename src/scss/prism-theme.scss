@@ -1,8 +1,8 @@
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   background: none;
   color: #9cdcfe;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -21,21 +21,21 @@ pre[class*='language-'] {
 }
 
 /* Code blocks */
-pre[class*='language-'] {
+pre[class*="language-"] {
   margin: 0.5em 0;
   overflow: auto;
   padding: 1em;
 }
 
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
   background: #1e1e1e;
   border-radius: 4px;
   font-size: 14px;
 }
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*="language-"] {
   border-radius: 0.3em;
   padding: 0.1em;
   white-space: normal;
@@ -156,11 +156,20 @@ pre[class*='language-'] {
   color: #3f9cd6;
 }
 
-.language-typescript .language-javascript .script-punctuation + .token.punctuation + .token.punctuation {
+.language-typescript
+  .language-javascript
+  .script-punctuation
+  + .token.punctuation
+  + .token.punctuation {
   color: #d4d4d4;
 }
 
-.language-typescript .language-javascript .script-punctuation + .token.punctuation + .token.punctuation ~ .token.punctuation {
+.language-typescript
+  .language-javascript
+  .script-punctuation
+  + .token.punctuation
+  + .token.punctuation
+  ~ .token.punctuation {
   color: #d4d4d4;
 }
 

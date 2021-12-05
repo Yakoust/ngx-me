@@ -17,9 +17,13 @@ export class PagesResolver implements Resolve<PageMeta[]> {
     const path = segments ? segments[segments.length - 1] : undefined;
     switch (path) {
       case RouteName.Category:
-        return this.pagesService.getAllPagesByCategory(route.queryParamMap.get('q') ?? '');
+        return this.pagesService.getAllPagesByCategory(
+          route.queryParamMap.get('q') ?? ''
+        );
       case RouteName.Tag:
-        return this.pagesService.getAllPagesByTag(route.queryParamMap.get('q') ?? '');
+        return this.pagesService.getAllPagesByTag(
+          route.queryParamMap.get('q') ?? ''
+        );
       default:
         return of([]);
     }
