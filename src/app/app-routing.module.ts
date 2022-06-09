@@ -27,7 +27,7 @@ const routes: Routes = [
       anchorScrolling: 'enabled',
       scrollOffset: [0, 64],
       scrollPositionRestoration: 'enabled',
-      initialNavigation: 'enabled',
+      initialNavigation: 'enabledNonBlocking',
     }),
   ],
   exports: [RouterModule],
